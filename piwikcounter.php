@@ -15,15 +15,11 @@ Author URI: http://blog.rontu.de
 License: GPLv2 or later
 */
 
+load_plugin_textdomain('piwikcounter', null, '/wp-content/plugins/piwikcounter/language/');
+
 require_once 'class.Visitors.php';
 require_once 'class.PiwikCounterWidget.php';
 require_once 'class.PiwikCounterAdministration.php';
-
-if ( !load_plugin_textdomain('PiwikCounter','/wp-content/languages/') )
-{
-	load_plugin_textdomain('PiwikCounter','/wp-content/plugins/piwikcounter/language/');
-}
-
 
 // options for PiwikCounter
 add_option( 'piwikcounter_piwik_url', '', '', 'yes' );				// URL of your Piwik installation
@@ -38,5 +34,5 @@ $pca = new PiwikCounterAdministration();
 
 //Actions und Filter
 add_action('widgets_init', create_function('', 'return register_widget("PiwikCounterWidget");'));
- 
+
 ?>
