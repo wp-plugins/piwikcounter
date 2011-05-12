@@ -28,7 +28,7 @@ add_option( 'piwikcounter_auth_key', '', '', 'yes' );				// your authorisation k
 add_option( 'piwikcounter_start_date', '', '', 'yes' );				// date when tracking in piwik began (date YYYY-MM-DD)
 add_option( 'piwikcounter_unique_visitors', '', '', 'yes' );		// all visitors or unique visitors (bool)
 add_option( 'piwikcounter_visitors_yesterday', '', '', 'yes' );		// quantity of visitors until yesterday
-add_option( 'piwikcounter_visitors_last_change', '', '', 'yes' );	// last modification date of piwikcounter_visitors_yesterday (date YYYY-MM-DD)
+add_option( 'piwikcounter_visitors_last_change', '2000-01-01', '', 'yes' );	// last modification date of piwikcounter_visitors_yesterday (date YYYY-MM-DD)
 
 $pca = new PiwikCounterAdministration();
 

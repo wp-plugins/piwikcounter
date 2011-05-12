@@ -53,7 +53,7 @@ class PiwikCounterAdministration {
 		<b>Start Date: </b><input type="text" name="start_date" value="<?php echo get_option('piwikcounter_start_date') ?>" /> (YYYY-MM-DD)<br />
 
 		<select name="unique_visitors">
-			<option value="1" <?php if (get_option('piwikcounter_unique_visitors') == 1) { echo 'selected="selected"'; } ?>>unique visitors</option>
+			<!-- <option value="1" <?php if (get_option('piwikcounter_unique_visitors') == 1) { echo 'selected="selected"'; } ?>>unique visitors</option> -->
 			<option value="0" <?php if (get_option('piwikcounter_unique_visitors') == 0) { echo 'selected="selected"'; } ?>>all visits</option>
 		</select><br />
 
