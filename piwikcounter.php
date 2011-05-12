@@ -8,7 +8,7 @@
 Plugin Name: PiwikCounter
 Plugin URI: http://piwikcounter.rontu.de
 Description: 
-Version: 0.1
+Version: 0.1.1
 Author: Tobias Etzold
 Email: tobias.etzold@googlemail.com
 Author URI: http://blog.rontu.de
