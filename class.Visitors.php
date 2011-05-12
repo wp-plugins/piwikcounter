@@ -4,24 +4,13 @@
  * @pakage PiwikCounter
  */
 
-/*
-Plugin Name: PiwikCounter
-Plugin URI: http://piwikcounter.rontu.de
-Description: 
-Version: 0.1
-Author: Tobias Etzold
-Email: tobias.etzold@googlemail.com
-Author URI: http://blog.rontu.de
-License: GPLv2 or later
-*/
-
 class Visitors {
 
-	private function getVisitors($start_date, $piwik_url, $site_id, $api_key, $unique = false) {
+	private function getVisitors($start_date, $piwik_url, $site_id, $api_key, $unique = 0) {
 	
 		if ($piwik_url != null) {
 		
-			if ( $unique == false) {
+			if ( $unique == 0) {
 				$method = 'VisitsSummary.getVisits';
 			}
 			else {
