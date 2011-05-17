@@ -36,8 +36,8 @@ class PiwikCounterWidget extends WP_Widget {
 		$visitors = new Visitors();
 		
 		// Update piwikcounter_visitors_yesterday if date of last change and actual date don't match
-		if ( get_option('piwikcounter_visitors_last_change') != date("Y-m-d") ) {
-				$visitors->updateYesterdayVisitors;
+		if ( strtotime(get_option('piwikcounter_visitors_last_change')) !== mktime(0, 0, 0, date("m"), date("d"), date("Y")) ) {
+				$visitors->updateYesterdayVisitors();
 		}
 		
 		// Get today's visits

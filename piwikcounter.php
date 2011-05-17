@@ -7,15 +7,17 @@
 /*
 Plugin Name: PiwikCounter
 Plugin URI: http://piwikcounter.rontu.de
-Description: 
-Version: 0.1.1
+Description: PiwikCounter allows you to show the summary of (unique) visitors as a widget on your blog.
+Version: 0.1.2
 Author: Tobias Etzold
 Email: tobias.etzold@googlemail.com
 Author URI: http://blog.rontu.de
 License: GPLv2 or later
+Text Domain: piwikcounter
 */
 
-load_plugin_textdomain('piwikcounter', null, '/wp-content/plugins/piwikcounter/language/');
+$plugin_dir = basename(dirname(__FILE__));
+load_plugin_textdomain( 'piwikcounter', false, $plugin_dir.'/language/' );
 
 require_once 'class.Visitors.php';
 require_once 'class.PiwikCounterWidget.php';

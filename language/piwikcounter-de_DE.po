@@ -2,49 +2,50 @@
 # This file is distributed under the same license as the PiwikCounter package.
 msgid ""
 msgstr ""
-"Project-Id-Version: PiwikCounter 0.1\n"
+"Project-Id-Version: PiwikCounter 0.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/piwikcounter\n"
-"POT-Creation-Date: 2011-05-12 08:25:54+00:00\n"
+"POT-Creation-Date: 2011-05-17 07:16:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2011-05-12 10:39+0100\n"
+"PO-Revision-Date: 2011-05-17 09:32+0100\n"
 "Last-Translator: Tobias Etzold <tobias.etzold@googlemail.com>\n"
 "Language-Team: Tobias Etzold <tobias.etzold@googlemail.com>\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: class.PiwikCounterWidget.php:30
-msgid "Title:"
-msgstr "Titel"
-
-#: class.PiwikCounterWidget.php:65
-msgid "%d visitors<br/>since"
-msgstr "%d Besucher<br/>seit"
-
-#: class.PiwikCounterWidget.php:69
-msgid "%d<br/>visits today"
-msgstr "%d<br/>Besuche heute"
-
-#: class.PiwikCounterAdministration.php:34
+#: class.PiwikCounterAdministration.php:23
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Du hast keine ausreichende Berechtigung um auf diese Seite zuzugreifen."
 
-#: class.PiwikCounterAdministration.php:46
+#: class.PiwikCounterAdministration.php:35
 msgid "Options saved."
 msgstr "Einstellungen gespeichert."
 
-#: class.PiwikCounterAdministration.php:53
+#: class.PiwikCounterAdministration.php:42
 msgid "PiwikCounter Settings"
 msgstr "PiwikCounter Einstellungen"
 
-#: class.PiwikCounterAdministration.php:71
+#: class.PiwikCounterAdministration.php:60
 msgid "Save Changes"
 msgstr "Einstellungen übernehmen"
 
+#: class.PiwikCounterWidget.php:19
+msgid "Title:"
+msgstr "Titel:"
+
+#: class.PiwikCounterWidget.php:54
+msgid "%d visitors<br/>since"
+msgstr "%d Besucher<br/>seit"
+
+#: class.PiwikCounterWidget.php:58
+msgid "%d<br/>visits today"
+msgstr "%d<br/>Besuche heute"
+
 #. Plugin Name of the plugin/theme
 msgid "PiwikCounter"
-msgstr "PiwikCounter"
+msgstr "PiwikCoutner"
 
 #. Plugin URI of the plugin/theme
 msgid "http://piwikcounter.rontu.de"
