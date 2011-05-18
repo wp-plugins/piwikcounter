@@ -31,6 +31,7 @@ add_option( 'piwikcounter_start_date', '', '', 'yes' );				// date when tracking
 add_option( 'piwikcounter_unique_visitors', '', '', 'yes' );		// all visitors or unique visitors (bool)
 add_option( 'piwikcounter_visitors_yesterday', '', '', 'yes' );		// quantity of visitors until yesterday
 add_option( 'piwikcounter_visitors_last_change', '2000-01-01', '', 'yes' );	// last modification date of piwikcounter_visitors_yesterday (date YYYY-MM-DD)
+add_option( 'piwikcounter_visits_today_visible', '1', '', 'yes' );	// enables visability of visits for today
 
 $pca = new PiwikCounterAdministration();
 

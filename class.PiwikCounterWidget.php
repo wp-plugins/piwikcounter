@@ -47,18 +47,43 @@ class PiwikCounterWidget extends WP_Widget {
 		$title = apply_filters('widget_title', $instance['title']);
 		
 		echo $before_widget;
+		
+		echo '<!-- PiwikCounter -->';
+		
         if ( $title ) { echo $before_title . $title . $after_title; }
 		
+		echo '<div id="piwikcounter_widget" style="text-align: center;">';
+		
 		// Output complete amount of visitors since the specified date
-		echo '<div style="text-align: center;">';
-		printf ( __( "%d visitors<br/>since" ), $all_visits);
+		if($all_visits == 0)
+		{
+			echo __("0<br/>visitors since", 'piwikcounter');
+		}
+		else
+		{
+			printf( _n( "%d<br/>visitor since", "%d<br/>visitors since", $all_visits, 'piwikcounter' ), $all_visits);	
+		}
+
+		setlocale(LC_TIME, WPLANG);
+		echo strftime(" %B %Y", strtotime(get_option('piwikcounter_start_date'))) .'<br/>';
+		//echo date(" F Y", strtotime(get_option('piwikcounter_start_date')) ) .'<br/>';
 		
 		// Output amount of visitors who came today
-		echo date(" F Y", strtotime(get_option('piwikcounter_start_date')) ) .'<br/>';
-		printf ( __( "%d<br/>visits today" ), $visits_today );
+		if(get_option("piwikcounter_visits_today_visible") == 1)
+		{
+			if($visits_today == 0)
+			{
+				echo __("0<br/>visits today", 'piwikcounter');
+			}
+			else
+			{
+				printf(_n("%d<br/>visit today", "%d<br/>visits today", $visits_today, 'piwikcounter'), $visits_today);
+			}
+		}
 		
 		echo '</div>';
 	
+		echo '<!-- End PiwikCounter -->';
 		echo $after_widget;
 	}
 

@@ -55,8 +55,6 @@ class Visitors {
 	public function updateYesterdayVisitors() {
 		// Get Visitors from Piwik
 		$visitors_yesterday = $this->getVisitors( get_option('piwikcounter_start_date'), get_option('piwikcounter_piwik_url'), get_option('piwikcounter_site_id'), get_option('piwikcounter_auth_key'), get_option('piwikcounter_unique_visitors') );
-	
-		echo '<!--' .$visitors_yesterday .' -->';
 		
 		// Update
 		update_option( 'piwikcounter_visitors_yesterday', $visitors_yesterday );	
