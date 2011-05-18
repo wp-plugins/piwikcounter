@@ -8,7 +8,7 @@
 Plugin Name: PiwikCounter
 Plugin URI: http://piwikcounter.rontu.de
 Description: PiwikCounter allows you to show the summary of (unique) visitors as a widget on your blog.
-Version: 0.1.2
+Version: 0.2.0
 Author: Tobias Etzold
 Email: tobias.etzold@googlemail.com
 Author URI: http://blog.rontu.de
