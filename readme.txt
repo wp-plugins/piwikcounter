@@ -3,7 +3,7 @@ Contributors: rontu
 Tags: counter, piwik
 Requires at least: 3.0
 Tested up to: 3.1
-Stable tag: 0.2.0
+Stable tag: 0.3.0
 License: GPLv2 or later
 
 PiwikCounter allows you to show the summary of (unique) visitors as a widget on your blog.
@@ -28,8 +28,12 @@ After that you should be able to get the amount of unique visitors.
 
 == Changelog ==
 
+= 0.3.0 =
+- added update interval option
+- PiwikCounter now just updates the amount of visits before today if they are greater than the old value.
+
 = 0.2.0 =
-- Internationalisation integrated
+- added internationalisation
 - added a german translation
 - added an improved admin menu
 - added an option to turn todays visits on and off
@@ -38,6 +42,6 @@ After that you should be able to get the amount of unique visitors.
 - reactivated unique visitors (see Installation)
 
 = 0.1.1 = 
-Selection of unique visitors deactivated, because of a problem with Piwiks API.
+- selection of unique visitors deactivated, because of a problem with Piwiks API.
 
 == Upgrade Notice ==
