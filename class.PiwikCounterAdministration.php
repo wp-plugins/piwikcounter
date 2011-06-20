@@ -31,6 +31,11 @@ class PiwikCounterAdministration {
 			update_option( 'piwikcounter_start_date', $_POST[ 'start_date' ] );
 			update_option( 'piwikcounter_unique_visitors', $_POST[ 'unique_visitors' ] );
 			
+			if ( $this->validateInt( $_POST[ 'update_interval' ], 0, 60 ) == $_POST[ 'update_interval' ] )
+			{
+				update_option( 'piwikcounter_update_every', $_POST[ 'update_interval' ] );
+			}
+			
 			if (isset($_POST[ 'visits_today_visible' ]) &&  ($_POST[ 'visits_today_visible' ] == 1)) {
 				update_option( 'piwikcounter_visits_today_visible', $_POST[ 'visits_today_visible' ] );
 			}
@@ -94,6 +99,13 @@ class PiwikCounterAdministration {
 							<?php if (get_option('piwikcounter_unique_visitors') == 0) { echo 'checked="checked"'; } ?> /> all visits
 					</td>
 				</tr>
+				
+				<tr valign="top">
+					<th scope="row"><?php _e("Update interval", 'piwikcounter'); ?></th>
+					<td>
+						<input type="text" size="4" name="update_interval" value="<?php echo get_option('piwikcounter_update_every') ?>" /> (time in minutes between 0 and 60)
+					</td>
+				</tr>
 		
 				<tr valign="top">
 					<th scope="row"><?php _e("Todays visitors", 'piwikcounter'); ?></th>
@@ -111,6 +123,21 @@ class PiwikCounterAdministration {
 		
 		</div>
 		<?php
+	}
+	
+	private function validateInt($value, $min_range = null, $max_range = null) {
+		
+		if ($min_range != null AND $max_range != null) {
+			$int_options = array("options"=>array("min_range"=>$min_range, "max_range"=>$max_range));
+		} 
+		else if ($min_range == null AND $max_range != null) {
+			$int_options = array("options"=>array("max_range"=>$max_range));
+		}
+		else if ($min_range != null AND $max_range == null) {
+			$int_options = array("options"=>array("min_range"=>$min_range));
+		}
+
+		return filter_var($value, FILTER_VALIDATE_INT, $int_options);
 	}
 
 }

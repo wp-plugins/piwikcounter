@@ -57,17 +57,35 @@ class Visitors {
 		$visitors_yesterday = $this->getVisitors( get_option('piwikcounter_start_date'), get_option('piwikcounter_piwik_url'), get_option('piwikcounter_site_id'), get_option('piwikcounter_auth_key'), get_option('piwikcounter_unique_visitors') );
 		
 		// Update
-		update_option( 'piwikcounter_visitors_yesterday', $visitors_yesterday );	
-		update_option( 'piwikcounter_visitors_last_change', date("Y-m-d", mktime(0, 0, 0, date("m"), date("d"), date("Y"))) );
-	
+		if ( get_option( 'piwikcounter_visitors_yesterday' ) < $visitors_yesterday )
+		{
+			update_option( 'piwikcounter_visitors_yesterday', $visitors_yesterday );	
+			update_option( 'piwikcounter_visitors_last_change', date("Y-m-d", mktime(0, 0, 0, date("m"), date("d"), date("Y"))) );
+		}
 	}
 	
 	public function getTodaysVisitors() {
 		
-		return $this->getVisitors( null, get_option('piwikcounter_piwik_url'), get_option('piwikcounter_site_id'), get_option('piwikcounter_auth_key'), get_option('piwikcounter_unique_visitors') );
+		if ( ($this->minTimeDiffReached( get_option('piwikcounter_todays_visitors_last_change'), get_option('piwikcounter_update_every')) ) )
+		{
+			update_option( 'piwikcounter_todays_visitors_last_change', time() );
+			update_option( 'piwikcounter_todays_visitors', $this->getVisitors( null, get_option('piwikcounter_piwik_url'), get_option('piwikcounter_site_id'), get_option('piwikcounter_auth_key'), get_option('piwikcounter_unique_visitors')) );
+		}
+	
+		return (int) get_option('piwikcounter_todays_visitors');
 	
 	}
-
+	
+	// check the minimum time between two timestamps
+	private function minTimeDiffReached($timestamp, $timedifference)
+	{
+		if ( time()-((int) $timedifference * 60) > (int) $timestamp )
+		{
+			return true;
+		}	
+		return false;
+	}
+	
 }
 
 ?>
